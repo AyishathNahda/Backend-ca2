@@ -7,11 +7,11 @@ app.post("/login",async(req,res)=>{
     try{
         const {email,password}=req.body;
         if(!email){
-            return res.send(400).json({message:"Email cannot be empty"});
+            return res.status(400).json({message:"Email cannot be empty"});
         }else if(!password){
-            return res.send(400).json({message:"Password cannot be empty"});
+            return res.status(400).json({message:"Password cannot be empty"});
         }else{
-            return res.send(201).json({message:"Login Successful"});
+            return res.status(201).json({message:"Login Successful"});
         }
     }catch(err){
         return res.status(500).json({message:"Internal Server Error",err});
